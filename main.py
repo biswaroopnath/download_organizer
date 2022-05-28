@@ -3,22 +3,22 @@ import os
 import shutil
 
 # edit the following if download folder is in some other places
-source = 'C:\\Users\\user\\Downloads'
+source = 'C:\\Users\\biswa\\Downloads'
 
 
 class destination:
-    pic = 'C:\\Users\\user\\Downloads\\pic'
-    doc = 'C:\\Users\\user\\Downloads\\doc\\word'
-    psd = 'C:\\Users\\user\\Downloads\\doc\\psd'
-    pdf = 'C:\\Users\\user\\Downloads\\doc\\pdf'
-    exe = 'C:\\Users\\user\\Downloads\\exe'
-    zip = 'C:\\Users\\user\\Downloads\\doc\\zip'
-    prproj = 'C:\\Users\\user\\Downloads\\doc\\premier_pro'
-    txt = 'C:\\Users\\user\\Downloads\\doc\\txt'
-    pptx = 'C:\\Users\\user\\Downloads\\doc\\pptx'
-    others = 'C:\\Users\\user\\Downloads\\others'
+    pic = 'C:\\Users\\biswa\\Downloads\\pic'
+    doc = 'C:\\Users\\biswa\\Downloads\\doc\\word'
+    psd = 'C:\\Users\\biswa\\Downloads\\doc\\psd'
+    pdf = 'C:\\Users\\biswa\\Downloads\\doc\\pdf'
+    exe = 'C:\\Users\\biswa\\Downloads\\exe'
+    zip = 'C:\\Users\\biswa\\Downloads\\doc\\zip'
+    prproj = 'C:\\Users\\biswa\\Downloads\\doc\\premier_pro'
+    txt = 'C:\\Users\\biswa\\Downloads\\doc\\txt'
+    pptx = 'C:\\Users\\biswa\\Downloads\\doc\\pptx'
+    others = 'C:\\Users\\biswa\\Downloads\\others'
 
-    documents = 'C:\\Users\\user\\Downloads\\doc'
+    documents = 'C:\\Users\\biswa\\Downloads\\doc'
 
 
 def make_doc():
@@ -109,13 +109,13 @@ def make_dir():
 
 
 def remove_destination_dir():
-    if os.path.exists('C:\\Users\\user\\Downloads\\doc'):
+    if os.path.exists(destination.documents):
         allfiles.remove('doc')
-    if os.path.exists('C:\\Users\\user\\Downloads\\exe'):
+    if os.path.exists(destination.exe):
         allfiles.remove('exe')
-    if os.path.exists('C:\\Users\\user\\Downloads\\others'):
+    if os.path.exists(destination.others):
         allfiles.remove('others')
-    if os.path.exists('C:\\Users\\user\\Downloads\\pic'):
+    if os.path.exists(destination.pic):
         allfiles.remove('pic')
 
 
