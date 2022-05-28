@@ -5,20 +5,21 @@ import shutil
 # edit the following if download folder is in some other places
 source = 'C:\\Users\\biswa\\Downloads'
 
+ 
 
 class destination:
-    pic = 'C:\\Users\\biswa\\Downloads\\pic'
-    doc = 'C:\\Users\\biswa\\Downloads\\doc\\word'
-    psd = 'C:\\Users\\biswa\\Downloads\\doc\\psd'
-    pdf = 'C:\\Users\\biswa\\Downloads\\doc\\pdf'
-    exe = 'C:\\Users\\biswa\\Downloads\\exe'
-    zip = 'C:\\Users\\biswa\\Downloads\\doc\\zip'
-    prproj = 'C:\\Users\\biswa\\Downloads\\doc\\premier_pro'
-    txt = 'C:\\Users\\biswa\\Downloads\\doc\\txt'
-    pptx = 'C:\\Users\\biswa\\Downloads\\doc\\pptx'
-    others = 'C:\\Users\\biswa\\Downloads\\others'
+    documents = source + '\\doc' 
+    doc = documents + '\\word'
+    psd = documents + '\\psd'
+    pdf = documents + '\\pdf'
+    zip = documents + '\\zip'
+    prproj = documents + '\\premier_pro'
+    txt = documents + '\\txt'
+    pptx = documents + '\\pptx'
+    exe = source + '\\exe'
+    others = source + '\\others'
+    pic = source + '\\pic'
 
-    documents = 'C:\\Users\\biswa\\Downloads\\doc'
 
 
 def make_doc():
@@ -118,29 +119,68 @@ def remove_destination_dir():
     if os.path.exists(destination.pic):
         allfiles.remove('pic')
 
+#for checking if same file is present already
+def check(file, dest):
+    all = os.listdir(dest)
+    for l in all:
+        if file == l:
+            return True
+        else:
+            return False
+
 
 def organize():
     for f in allfiles:
         if f.lower().endswith(('.png', '.jpg', '.jpeg')):
-            shutil.move(source + '\\' + f, destination.pic + '\\' + f)
+            if check(f, destination.pic):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.pic + '\\' + f)
         elif f.lower().endswith(('.pdf')):
-            shutil.move(source + '\\' + f, destination.pdf + '\\' + f)
+            if check(f, destination.pdf):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.pdf + '\\' + f)
         elif f.lower().endswith(('.psd')):
-            shutil.move(source + '\\' + f, destination.psd + '\\' + f)
+            if check(f, destination.psd):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.psd + '\\' + f)
         elif f.lower().endswith(('.doc', '.docx')):
-            shutil.move(source + '\\' + f, destination.doc + '\\' + f)
+            if check(f, destination.doc):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.doc + '\\' + f)
         elif f.lower().endswith(('.exe')):
-            shutil.move(source + '\\' + f, destination.exe + '\\' + f)
+            if check(f, destination.exe):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.exe + '\\' + f)
         elif f.lower().endswith(('.txt')):
-            shutil.move(source + '\\' + f, destination.txt + '\\' + f)
+            if check(f, destination.txt):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.txt + '\\' + f)
         elif f.lower().endswith(('.zip')):
-            shutil.move(source + '\\' + f, destination.zip + '\\' + f)
+            if check(f, destination.zip):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.zip + '\\' + f)
         elif f.lower().endswith(('.ppt', '.pptx')):
-            shutil.move(source + '\\' + f, destination.pptx + '\\' + f)
+            if check(f, destination.pptx):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.pptx + '\\' + f)
         elif f.lower().endswith(('.prproj')):
-            shutil.move(source + '\\' + f, destination.prproj + '\\' + f)
+            if check(f, destination.prproj):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.prproj + '\\' + f)
         else:
-            shutil.move(source + '\\' + f, destination.others + '\\' + f)
+            if check(f, destination.others):
+                continue
+            else:
+                shutil.move(source + '\\' + f, destination.others + '\\' + f)
 
 
 # Driver code
