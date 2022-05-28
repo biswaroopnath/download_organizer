@@ -2,4 +2,6 @@
 Helps  to organize your files in download  section.
 
 ## Installation
-Just install python and run main.py
+1.Change the source variable to match your download folder location. Use '//' for a slash.
+2.Run the code main.py 
+3.Done.
