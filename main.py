@@ -1,4 +1,4 @@
-# organize downlaods folder
+# organize downloads folder
 import os
 import shutil
 
