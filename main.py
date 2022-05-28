@@ -3,7 +3,7 @@ import os
 import shutil
 
 # edit the following if download folder is in some other places
-source = 'C:\\Users\\biswa\\Downloads'
+source = 'C:\\Users\\user\\Downloads'
 
  
 
@@ -124,9 +124,16 @@ def check(file, dest):
     all = os.listdir(dest)
     for l in all:
         if file == l:
-            return True
+            bool = True
+            break
         else:
-            return False
+            bool = False
+            continue
+        
+    if bool:
+        return True
+    else:
+        return False
 
 
 def organize():
@@ -191,6 +198,6 @@ make_dir()
 allfiles = os.listdir(source)
 remove_destination_dir()
 # uncomment if use telegram desktop
-# allfiles.remove('Telegram Desktop')
+#allfiles.remove('Telegram Desktop')
 organize()
 exit()
