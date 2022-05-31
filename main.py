@@ -122,6 +122,7 @@ def remove_destination_dir():
 #for checking if same file is present already
 def check(file, dest):
     all = os.listdir(dest)
+    bool = False
     for l in all:
         if file == l:
             bool = True
